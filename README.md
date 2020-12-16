@@ -9,5 +9,3 @@
     - 需要修改charPicToLabel.py的绝对路径
   - DotToPic.java 将前端传入的点集存为图片
     - 需要修改文件保存路径为本地路径
-
-- test-LeNet-5 模型训练的代码
