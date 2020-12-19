@@ -1,9 +1,15 @@
 # recognizeModelBackend
 ***前端调用后端模型，只需clone这个仓库***
 ## 起步
-- 修改charPicToLabel.py和geoPicToLabel.py的SAVER_DIR和path
-- 修改GlobalVariable类中的pythonAddress, charPicToLabel, geoPicToLabel和picAddress
-- Entrance类为服务器入口，运行main启动服务器
+- 对于connectModelandFrontend
+  - 修改GlobalVariable类中的pythonAddress, charPicToLabel, geoPicToLabel和picAddress
+  - Entrance类为服务器入口，运行main启动服务器
+- 对于PicToLabel
+  - 修改charPicToLabel.py和geoPicToLabel.py的SAVER_DIR和path
+  - 安装需要的包 pip install -r requirements.txt
+    - tensorflow 1.13.1
+    - numpy 1.19.4
+    - Pillow 8.0.1
 
 ## 目录结构
 - PicToLabel 调用字符识别模型
