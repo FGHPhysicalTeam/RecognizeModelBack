@@ -7,7 +7,7 @@ public class ServerSide extends Thread{
     public ServerSide(int port) throws IOException
     {
         serverSocket = new ServerSocket(port);
-        serverSocket.setSoTimeout(1000000);
+        serverSocket.setSoTimeout(1000000000);
     }
 
     public void run()
@@ -20,17 +20,18 @@ public class ServerSide extends Thread{
                 Socket server = serverSocket.accept();
                 System.out.println("客户机地址" + server.getRemoteSocketAddress());
                 BufferedReader br = new BufferedReader(new InputStreamReader(server.getInputStream(),"UTF-8"));
-                String tmp1 = br.readLine();
-                System.out.println("客户端请求：" + tmp1);
+                String dotListType = br.readLine();
+                System.out.println("---客户端请求---\n当前为" + dotListType + "类型的点集");
                 String result = "";
 
-                System.out.println("true");
                 //1. 将点集存为本地图片
-
                 DotToPic dotToPic = new DotToPic();
-                dotToPic.dottopic(tmp1);
+                String dotListX, dotListY = "";
+                dotListX = br.readLine();
+                dotListY = br.readLine();
+                dotToPic.dottopic(dotListX, dotListY);
                 //2. 调用python分类代码
-                Java_Python_test java_python_test = new Java_Python_test();
+                Java_Python_test java_python_test = new Java_Python_test(dotListType);
                 result = java_python_test.runModel();
                 System.out.println("the result is:" + result);
 

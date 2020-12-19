@@ -12,7 +12,10 @@ HEIGHT = 28
 NUM_CLASSES = 20
 
 #需要修改
-SAVER_DIR = "D:\\pycharmProjects\\test-lenet-5_2\\test-LeNet-5\\char_model\\"
+SAVER_DIR = "/Users/fengyushan/githubProject/RecognizeModelBack/PicToLabel/char_model/"
+path = "/Users/fengyushan/githubProject/RecognizeModelBack/connetModelAndFrontend/src/pic/test.png"
+
+filename = 'test.png'
 LETTERS_DIGITS = (
 "+","-",".","0","1","2","3","4","5","6","7","8","9","=","B","E","q","v","θ","√")
 license_num = ""
@@ -85,8 +88,7 @@ with tf.Session() as sess:
     saver.restore(sess, model_file)
 
     # path = "D:\\pycharmProjects\\test-lenet-5_2\\test-LeNet-5\\Pic\\test.png"
-    path = 'D:\\ideaProjects\\untitled_1\\src\\pic\\test.png'
-    filename = 'test.png'
+
 
     img = Image.open(path)
     image_count = image_count + 1
