@@ -12,8 +12,6 @@ public class Java_Python_test {
         this.dotListType = dotListType;
     }
     public String runModel() {
-        // TODO Auto-generated method stub
-
         Process proc;
         GlobalVariable globalVariable = new GlobalVariable();
         try {
@@ -21,7 +19,7 @@ public class Java_Python_test {
             String pythonAddress = globalVariable.getPythonAddress();
             String charModelAddress;
             if(dotListType.equals("character")){
-                charModelAddress = globalVariable.getCharPicToLabel();
+                charModelAddress = globalVariable.getCharPicToLabelWithNewModel();
             }else{
                 charModelAddress = globalVariable.getGeoPicToLabel();
             }
@@ -45,6 +43,3 @@ public class Java_Python_test {
         return "";
     }
 }
-
-
-

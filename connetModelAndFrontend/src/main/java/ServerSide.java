@@ -3,6 +3,7 @@ import java.io.*;
 
 public class ServerSide extends Thread{
     private ServerSocket serverSocket;
+    private Socket server;
 
     public ServerSide(int port) throws IOException
     {
@@ -16,12 +17,9 @@ public class ServerSide extends Thread{
         {
             try
             {
-                System.out.println("服务器地址" + serverSocket.getLocalSocketAddress() + "...");
-                Socket server = serverSocket.accept();
-                System.out.println("客户机地址" + server.getRemoteSocketAddress());
+                server = serverSocket.accept();
                 BufferedReader br = new BufferedReader(new InputStreamReader(server.getInputStream(),"UTF-8"));
                 String dotListType = br.readLine();
-                System.out.println("---客户端请求---\n当前为" + dotListType + "类型的点集");
                 String result = "";
 
                 //1. 将点集存为本地图片
@@ -33,7 +31,6 @@ public class ServerSide extends Thread{
                 //2. 调用python分类代码
                 Java_Python_test java_python_test = new Java_Python_test(dotListType);
                 result = java_python_test.runModel();
-                System.out.println("the result is:" + result);
 
                 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(server.getOutputStream(),"UTF-8"));
                 out.write(result);

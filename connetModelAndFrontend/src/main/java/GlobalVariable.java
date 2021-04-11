@@ -8,6 +8,7 @@ public class GlobalVariable {
     private String charPicToLabel = "/Users/fengyushan/githubProject/RecognizeModelBack/PicToLabel/charPicToLabel.py";
     private String geoPicToLabel = "/Users/fengyushan/githubProject/RecognizeModelBack/PicToLabel/geoPicToLabel.py";
     private String picAddress = "/Users/fengyushan/githubProject/RecognizeModelBack/connetModelAndFrontend/src/pic/test.png";
+    private String charPicToLabelWithNewModel = "/Users/fengyushan/githubProject/RecognizeModelBack/PicToLabel/charPicToLabelWithNewModel.py";
     private int port = 6066;
     public String getPythonAddress(){
         return pythonAddress;
@@ -15,6 +16,7 @@ public class GlobalVariable {
     public String getCharPicToLabel(){
         return charPicToLabel;
     }
+    public String getCharPicToLabelWithNewModel(){return charPicToLabelWithNewModel;}
     public String getGeoPicToLabel(){
         return geoPicToLabel;
     }

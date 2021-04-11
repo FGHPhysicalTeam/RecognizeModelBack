@@ -118,4 +118,7 @@ with tf.Session() as sess:
             max1 = result[0][j]
             max1_index = j
             continue
-    print(LETTERS_DIGITS[max1_index])
+    if max1 >= 6:
+        print(LETTERS_DIGITS[max1_index])
+    else:
+        print("UNKNOWN")

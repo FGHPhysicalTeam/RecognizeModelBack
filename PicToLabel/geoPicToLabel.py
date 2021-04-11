@@ -17,7 +17,7 @@ path = "/Users/fengyushan/githubProject/RecognizeModelBack/connetModelAndFronten
 
 filename = 'test.png'
 LETTERS_DIGITS = (
-"negativeElectricityParticle","rectangle","positiveElectricityParticle","circle","arrow")
+    "negativeElectricityParticle","rectangle","positiveElectricityParticle","circle","arrow")
 license_num = ""
 count = 0
 image_count = 0
